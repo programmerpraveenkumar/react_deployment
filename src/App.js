@@ -1,16 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+ const router = createBrowserRouter([
+  {"path":"/",element:<Home/>},
+  {"path":"home",element:<Home/>},
+  {"path":"about",element:<About/>},  
+ ])
 
-function App() {
-  useEffect(async ()=>{
-    let res = await fetch("https://node-express-zfxd.onrender.com/",{"method":"GET"});
-    let json = await res.json();
-    console.log(json);
-  })
+function App() {  
   return (
     <div className="App">
-    <h1>this is react app</h1>
+      <RouterProvider router={router}/>
+      {/* <Home/> */}
     </div>
   );
 }
