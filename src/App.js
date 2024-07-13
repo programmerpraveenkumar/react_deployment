@@ -15,8 +15,8 @@ import ErrorPage from './ErrorPage';
 function App() {  
   return (
     <div className="App">
-      {/* <RouterProvider router={router}/> */}
-      <Home/>
+      <RouterProvider router={router}/>
+      {/* <Home/> */}
     </div>
   );
 }
